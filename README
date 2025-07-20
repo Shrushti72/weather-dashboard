@@ -1,0 +1,20 @@
+# 🌦️ Real-Time Weather Dashboard 🌐
+
+A Streamlit web app that scrapes live weather data for 5 cities using [timeanddate.com](https://www.timeanddate.com/weather/) and plots **temperature** & **humidity** comparisons on a dual-axis bar chart.
+
+## 🔧 Features
+- Enter up to 5 cities
+- Real-time weather scraping
+- Bar chart comparison (Temperature & Humidity)
+- Export data as CSV
+- Deployed online via Streamlit Cloud
+
+---
+
+## 🚀 How to Run Locally
+
+### 🔗 Prerequisites
+Install required packages:
+
+```bash
+pip install -r requirements.txt
