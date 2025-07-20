@@ -22,12 +22,17 @@ def get_weather_data(city_name):
         condition = city_soup.select_one('.bk-focus__qlook span').text.strip()
         details = city_soup.select('.bk-focus__info tr')
 
+        if "°F" in temp:
+            f = float(temp.replace("°F", "").strip())
+            celsius = round((f - 32) * 5/9, 1)
+        else:
+            celsius = float(temp.replace("°C", "").strip())
+            
         weather_data = {
             "City": city_name,
-            "Temperature (°C)": int(temp.replace("°C", "").strip()),
+            "Temperature (°C)": celsius,
             "Condition": condition
-        }
-
+            }
         for row in details:
             tds = row.find_all('td')
             if len(tds) == 2:
